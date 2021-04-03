@@ -15,14 +15,11 @@ export const VSection = styled.section`
     -moz-box-shadow: 0px 0px 37px -10px rgba(179,179,179,.5);
    
    }
+   cursor:pointer;
 `;
 
 export const VSectionItems = styled.div`
    display: flex;
    flex-direction:column;
    padding:5px;
-   &p:last-child {
-      marging-top: 10px
-   }
-
 `;
