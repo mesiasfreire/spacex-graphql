@@ -1,18 +1,19 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { render }  from 'react-dom';
+import  GlobalStyle from './global.style.js';
+import App from './App'
 import { ApolloProvider } from '@apollo/client';
 
 import { client } from './graphql/setup';
-import './index.css';
-import Rocket from './components/Rockets'
 
-function App() {
+function Init() {
   return (
   <ApolloProvider client={client}>
-   <React.StrictMode>
-    <Rocket rocket="Qualquer coisa aqui"/>
-   </React.StrictMode>,
- </ApolloProvider> 
+    <React.StrictMode>
+     <GlobalStyle/>
+     <App />
+    </React.StrictMode>
+  </ApolloProvider>
   );
 }
-render(<App/>,document.getElementById('root'));
+render(<Init />, document.getElementById('root'));
