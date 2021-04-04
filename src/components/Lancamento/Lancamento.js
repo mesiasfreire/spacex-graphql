@@ -7,8 +7,11 @@ import { getLauches } from "../../graphql/queries";
 import ListaLancamentos from "./components/ListaLancamentos/ListaLancamentos";
 
 
-function Lancamento() {
-    const { loading, error, data } = useQuery(getLauches)
+function Lancamento({limit}) {
+    const { loading, error, data } = useQuery(getLauches,{
+        variables: {limit: limit}
+    });
+    console.log(data);
 
     if ( loading ) return <p>Carregando dados...</p>;
     if ( error ) return <p>Erro ao processar dados .... </p>
