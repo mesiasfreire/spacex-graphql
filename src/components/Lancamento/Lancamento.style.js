@@ -6,7 +6,7 @@ export const VSection = styled.section`
    align-items:center;
    padding:20px;
    border-radius: 4px;
-   margin-top: 50px;
+   margin-top: 100px;
    border:2px solid #f5f5f5;
    &:hover {
     box-shadow: 0px 0px 37px -10px rgba(179,179,179,.5);

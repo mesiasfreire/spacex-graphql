@@ -9,7 +9,7 @@ const ListaLancamentos = ({lancamentos}) => {
     if(!lancamentos) return '<p> Não possui lançamentos</p>';
     return(
         <VListContainer>
-        {lancamentos.launches.map((launch) => (
+        {lancamentos?.launches.map((launch) => (
         <VSection key={launch.id}>
             <VSectionItems>
                 <p>Nome: {launch.mission_name}</p>

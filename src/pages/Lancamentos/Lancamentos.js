@@ -7,10 +7,14 @@ import { VInput, VButton, VInputContainer } from "../../css/htmlElements.style";
 
 const Lancamentos = () => {
     const [limit, setLimit] = useState(10);
+    const [search, setSearch]= useState('');
 
     function handleChangeLimit(event) {
-        console.log(event.target.value);
         setLimit(event.target.value);
+    }
+    function handleSearchChange(event) {
+        const valor = event.target.value;
+            setSearch(valor);
     }
 
     return (
@@ -18,7 +22,7 @@ const Lancamentos = () => {
              <VSectionSearchLaunches>
                 <label htmlFor="pesquisa">Lançamentos: </label>
                 <VInputContainer>
-                    <VInput type="search" id="pesquisa" placeholder="Buscar ..."/>
+                    <VInput type="search" id="pesquisa" placeholder="Buscar ..." onChange={handleSearchChange}/>
                     <VButton><FaSearch/></VButton>
                 </VInputContainer>
                 <label>Apresentação: </label>
@@ -28,7 +32,7 @@ const Lancamentos = () => {
                     <option value='50'>50</option>
                 </select> 
             </VSectionSearchLaunches>
-            <Lancamento  limit={parseInt(limit)}/>
+            <Lancamento  limit={parseInt(limit)} search={search}/>
         </VContent>
         
     );

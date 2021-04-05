@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 export const getLauches = gql`
 query getLancamentos($limit: Int!){
-  launches(limit: $limit,) {
+  launches(limit: $limit) {
     id
     mission_name
     launch_date_utc

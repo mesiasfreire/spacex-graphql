@@ -7,17 +7,16 @@ import { getLauches } from "../../graphql/queries";
 import ListaLancamentos from "./components/ListaLancamentos/ListaLancamentos";
 
 
-function Lancamento({limit}) {
+function Lancamento({limit, search}) {
     const { loading, error, data } = useQuery(getLauches,{
-        variables: {limit: limit}
+        variables: {limit: limit,}
     });
-    console.log(data);
-
     if ( loading ) return <p>Carregando dados...</p>;
     if ( error ) return <p>Erro ao processar dados .... </p>
+
     return (
         <VSectionContainer >
-            <ListaLancamentos lancamentos={data} />
+            <ListaLancamentos lancamentos={data} data-testid="listaLancamentos" />
         </VSectionContainer>
     );
 }
